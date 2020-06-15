@@ -64,7 +64,11 @@ $ modprobe drm
 # cp -r /tmp/staging/lib/modules/5.6.18-1-MANJARO/extra/* /lib/modules/5.6.18-1-MANJARO/kernel/drivers/gpu/
 ```
 
-:warning: Your path may not be `5.6.18-1-MANJARO` as it depends on the Manjaro kernel version you chose
+:warning:
+```diff
+!Your path may not be `5.6.18-1-MANJARO` as it depends on the Manjaro kernel version you chose
+```
+:warning:
 
 9. Reboot
 
