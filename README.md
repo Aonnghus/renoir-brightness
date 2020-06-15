@@ -2,13 +2,13 @@
 
 ## Instructions for Manjaro
 
-1. Clone desired Manjaro kernel (here v5.6)
+### 1. Clone desired Manjaro kernel (here v5.6)
 
 ```bash
 $ git clone https://gitlab.manjaro.org/packages/core/linux56
 ```
 
-2. Add brightness patch to PKGBUILD
+### 2. Add brightness patch to PKGBUILD
 
 [Patch](https://aur.archlinux.org/cgit/aur.git/plain/brightness.patch?h=linux-renoir-backlight), can be found in the repository.
 
@@ -42,7 +42,7 @@ Git diff:
 
 Save.
 
-3. Retrieve SHA256 sums
+### 3. Retrieve SHA256 sums
 
 ```bash
 $ makepkg -g
@@ -53,33 +53,33 @@ Makepkg will download build sources, like Linux kernel.
 Copy lines from the output, from `sha256sums=(` to the very last `)`.
 Paste them into PKGBUILD, replacing the previous `sha256sums` array (lines 73-115)
 
-4. Apply patch
+### 4. Apply patch
 
 ```bash
 $ makepkg -o
 ```
 
-5. Prepare modules
+### 5. Prepare modules
 
 ```bash
 $ cd src/linux-5.6/
 $ make modules_prepare
 ```
 
-6. Compile GPU module
+### 6. Compile GPU module
 
 ```bash
 $ make -j$(nproc) M=drivers/gpu/ modules
 ```
 
-7. Install GPU module into temporary folder (there will be SSL errors, ignore them)
+### 7. Install GPU module into temporary folder (there will be SSL errors, ignore them)
 
 ``` bash
 $ mkdir /tmp/staging/
 $ make M=drivers/gpu/ INSTALL_MOD_PATH=/tmp/staging modules_install
 ```
 
-8. Replace original driver
+### 8. Replace original driver
 
 ```bash
 $ modprobe amdgpu
@@ -91,7 +91,7 @@ $ modprobe drm
 **Your path may not be `5.6.18-1-MANJARO` as it depends on the Manjaro kernel version you chose**
 :warning:
 
-9. Reboot
+### 9. Reboot
 
 
 
