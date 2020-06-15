@@ -1,6 +1,8 @@
-# HOW TO MAKE BRIGHTNESS HOTKEY WORK ON AMD RENOIR LAPTOPS
+# How to make brightness hotkey work on AMD Renoir laptops
 
-1. Clone desired Manjaro kernel
+## Instructions for Manjaro
+
+1. Clone desired Manjaro kernel (here v5.6)
 
 ```bash
 $ git clone https://gitlab.manjaro.org/packages/core/linux56
@@ -26,7 +28,7 @@ $ makepkg -g
 Makepkg will download build sources, like Linux kernel.
 
 Copy all the lines from `sha256sums=(` to last `)`.
-Paste it into PKGBUILD, replacing the previous sha256sums array.
+Paste it into PKGBUILD, replacing the previous `sha256sums` array.
 
 4. Apply patch
 
@@ -47,7 +49,7 @@ $ make modules_prepare
 $ make -j$(nproc) M=drivers/gpu/ modules
 ```
 
-7. Install DRM module into temporary folder (there will be SSL error, ignore them)
+7. Install GPU module into temporary folder (there will be SSL errors, ignore them)
 
 ``` bash
 $ mkdir /tmp/staging/
@@ -61,6 +63,8 @@ $ modprobe amdgpu
 $ modprobe drm
 # cp -r /tmp/staging/lib/modules/5.6.18-1-MANJARO/extra/* /lib/modules/5.6.18-1-MANJARO/kernel/drivers/gpu/
 ```
+
+:warning: Your path may not be `5.6.18-1-MANJARO` as it depends on the Manjaro kernel version you chose
 
 9. Reboot
 
