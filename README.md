@@ -15,6 +15,7 @@ $ git clone https://gitlab.manjaro.org/packages/core/linux56
 Put the patch file in `linux56` folder.
 Open `PKGBUILD`, and add `'brightness.patch'`on a new line at line 71, right before the ")".
 
+Git diff:
 ```diff
 # '0012-bootsplash.patch'
 ! '0013-bootsplash.patch'
@@ -27,7 +28,7 @@ At line 226, add a new line and paste this:
 msg "Add brightness patch"
 patch -Np1 -i "${srcdir}/brightness.patch"
 ```
-
+Git diff:
 ```diff
 # patch -Np1 -i "${srcdir}/vfs-ino.patch"
 +
