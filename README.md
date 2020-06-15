@@ -22,6 +22,23 @@ Open `PKGBUILD`, and add `'brightness.patch'`on a new line at line 71, right bef
 # sha256sums=(
 ```
 
+At line 226, add a new line and paste this:
+```
+msg "Add brightness patch"
+patch -Np1 -i "${srcdir}/brightness.patch"
+```
+
+```diff
+# patch -Np1 -i "${srcdir}/vfs-ino.patch"
++
++ msg "Add brightness patch"
++ patch -Np1 -i "${srcdir}/brightness.patch"
++
+# if [ "${CARCH}" = "x86_64" ]; then
+```
+
+**Be careful to indentation!**
+
 Save.
 
 3. Retrieve SHA256 sums
@@ -32,8 +49,8 @@ $ makepkg -g
 
 Makepkg will download build sources, like Linux kernel.
 
-Copy all the lines from `sha256sums=(` to last `)`.
-Paste it into PKGBUILD, replacing the previous `sha256sums` array.
+Copy lines from the output, from `sha256sums=(` to the very last `)`.
+Paste them into PKGBUILD, replacing the previous `sha256sums` array (lines 73-115)
 
 4. Apply patch
 
