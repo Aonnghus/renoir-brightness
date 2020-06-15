@@ -70,9 +70,7 @@ $ modprobe drm
 ```
 
 :warning:
-```diff
-!Your path may not be `5.6.18-1-MANJARO` as it depends on the Manjaro kernel version you chose
-```
+**Your path may not be `5.6.18-1-MANJARO` as it depends on the Manjaro kernel version you chose**
 :warning:
 
 9. Reboot
