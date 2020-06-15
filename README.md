@@ -34,7 +34,7 @@ Git diff:
 +
 + msg "Add brightness patch"
 + patch -Np1 -i "${srcdir}/brightness.patch"
-+
+#
 # if [ "${CARCH}" = "x86_64" ]; then
 ```
 
