@@ -13,10 +13,15 @@ $ git clone https://gitlab.manjaro.org/packages/core/linux56
 [Patch](https://aur.archlinux.org/cgit/aur.git/plain/brightness.patch?h=linux-renoir-backlight), can be found in the repository.
 
 Put the patch file in `linux56` folder.
-Open `PKGBUILD`, and add on a new line at line 71, right before the ")":
+Open `PKGBUILD`, and add `'brightness.patch'`on a new line at line 71, right before the ")".
+
+```diff
+# '0012-bootsplash.patch'
+! '0013-bootsplash.patch'
++ 'brightness.patch')
+# sha256sums=(
 ```
-'brightness.patch'
-```
+
 Save.
 
 3. Retrieve SHA256 sums
