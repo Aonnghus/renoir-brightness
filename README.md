@@ -66,17 +66,17 @@ $ cd src/linux-5.6/
 $ make modules_prepare
 ```
 
-### 6. Compile GPU module
+### 6. Compile DRM module
 
 ```bash
-$ make -j$(nproc) M=drivers/gpu/ modules
+$ make -j$(nproc) M=drivers/gpu/drm modules
 ```
 
-### 7. Install GPU module into temporary folder (there will be SSL errors, ignore them)
+### 7. Install DRM module into temporary folder (there will be SSL errors, ignore them)
 
 ``` bash
 $ mkdir /tmp/staging/
-$ make M=drivers/gpu/ INSTALL_MOD_PATH=/tmp/staging modules_install
+$ make M=drivers/gpu/drm INSTALL_MOD_PATH=/tmp/staging modules_install
 ```
 
 ### 8. Replace original driver
@@ -84,7 +84,7 @@ $ make M=drivers/gpu/ INSTALL_MOD_PATH=/tmp/staging modules_install
 ```bash
 $ modprobe amdgpu
 $ modprobe drm
-# cp -r /tmp/staging/lib/modules/5.6.18-1-MANJARO/extra/* /lib/modules/5.6.18-1-MANJARO/kernel/drivers/gpu/
+# cp -r /tmp/staging/lib/modules/5.6.18-1-MANJARO/extra/* /lib/modules/5.6.18-1-MANJARO/kernel/drivers/gpu/drm/
 ```
 
 :warning:
