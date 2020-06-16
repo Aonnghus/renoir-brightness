@@ -1,5 +1,10 @@
 # How to make brightness hotkey work on AMD Renoir laptops
 
+## Table of contents
+
+* [Instructions for Manjaro](#instructions-for-manjaro)
+* [Instructions for other distros](#instructions-for-other-distros)
+
 ## Instructions for Manjaro
 
 ### 1. Clone desired Manjaro kernel (here v5.6)
@@ -93,8 +98,7 @@ $ modprobe drm
 
 ### 9. Reboot
 
+## Instructions for other distros
 
-
-
-
-
+You can try to apply the patch to vanilla [Linux kernel](https://kernel.org). If your distro uses a customized kernel, you'd better use it as distros developers add their own patches over vanilla.
+If you succeed to make brightness work on other distros, you can create an issue and I'll add your instructions to this README.
